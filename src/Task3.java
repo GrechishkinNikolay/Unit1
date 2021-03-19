@@ -18,21 +18,6 @@ public class Task3 {
             System.out.println();
         }
 
-        for (int[] row : array) {
-
-            int min = row[0], max = row[0];
-
-            for (int element : row) {
-                if (element < min) {
-                    min = element;
-                }
-                if (element > max){
-                    max = element;
-                }
-            }
-        }
-
-
         for (int i = 0; i < array.length; i++) {
 
             int min = array[i][0], max = array[i][0];
@@ -41,7 +26,7 @@ public class Task3 {
                 if (array[i][j] < min) {
                     min = array[i][j];
                 }
-                if (array[i][j] > max){
+                if (array[i][j] > max) {
                     max = array[i][j];
                 }
             }
