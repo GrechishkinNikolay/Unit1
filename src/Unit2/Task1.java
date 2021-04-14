@@ -23,17 +23,18 @@ import java.util.ArrayList;
     Задание 5. Lambda-выражения
 Написать функциональный интерфейс с методом, который принимает число и возвращает булево значение. Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает true, если переданное число делится без остатка на 13.
 Написать функциональный интерфейс с методом, который принимает три дробных числа a, b, c и возвращает тоже дробное число. Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает дискриминант (D = b^2 — 4ac).
-Написать функциональный интерфейс с методом, который принимает 2 числа и возвращает их сумму. При этом сделать так, чтобы можно было посчитать сумму чисел типа integer + integer, float + float, double + double. Написать реализации такого интерфейса в виде лямбда-выражений для каждого типа возвращаемого значения.
+Написать функциональный интерфейс с методом, который принимает 2 числа и возвращает их сумму. При этом сделать так, чтобы можно было посчитать сумму чисел типа integer + integer, float + float, double + double. Написать реализации такого
+ интерфейса в виде лямбда-выражений для каждого типа возвращаемого значения.
 */
 public class Task1 {
 
     public static void main(String[] args) {
 
         Stationery stationery1 = new Stationery(70, "Степлер");
-        Stationery stationery2 = new Stationery(100, "Скотч");
+        Stationery stationery2 = new Stationery(99.99, "Скотч");
         Stationery stationery3 = new Stationery(130, "Ножницы");
         Stationery stationery4 = new Stationery(100, "Клей");
-        Stationery stationery5 = new Stationery(40, "Набор зажимов");
+        Stationery stationery5 = new Stationery(39.90, "Набор зажимов");
 
         ArrayList<Stationery> stationeries1 = new ArrayList<>();
         stationeries1.add(stationery1);
@@ -46,7 +47,6 @@ public class Task1 {
         stationeries2.add(stationery2);
         stationeries2.add(stationery3);
 
-
         Employee employee1 = new Employee("Миша");
         Employee employee2 = new Employee("Саша", stationeries1);
         Employee employee3 = new Employee("Лена", stationeries2);
@@ -54,6 +54,6 @@ public class Task1 {
         System.out.println(employee1);
         System.out.println(employee2);
         System.out.println(employee3);
-        System.out.println("");
+        System.out.printf(" У работника с именем \"%s\" концелярии на %5.2f", employee2.getName(), employee2.getPriceOfAllStationeries());
     }
 }
