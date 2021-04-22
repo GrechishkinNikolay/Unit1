@@ -1,6 +1,11 @@
 package Unit2;
 
+import Unit2.Stationeries.OtherStationery;
+import Unit2.Stationeries.Pen;
+import Unit2.Stationeries.Pencil;
+import Unit2.Stationeries.Stationery;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
     Задание 1. Классы, объекты, перегрузка
@@ -9,32 +14,18 @@ import java.util.ArrayList;
 Поле стоимости сделать типом double. Перегрузить метод установки значения для поля стоимости,
 чтобы была возможность передавать стоимость с типом integer и long.
 В каждом классе определить методы equals(), hashCode(), toString().
-    Задание 2. Наследование
-Разработайте иерархию канцелярских товаров (достаточно 3 предметов).
-Создайте "набор новичка", используя созданную иерархию.
-Сделать так, чтобы невозможно было создать объект базового класса.
-    Задание 3. Интерфейсы
-Разработать программу, которая предоставит возможность клиенту общаться в мессенджере.
-Создать 3 мессенджера, у которых должны быть обязательно определены методы sendMessage() и readMessage().
-У клиента может быть только 1 из 3 мессенджеров, но заранее неизвестно, какой именно.
-    Задание 4. Сортировка
-Используйте "набор новичка", созданные в задании 2 (или любую другую коллекцию объектов);
- отсортируйте вещи в этом наборе по стоимости, по наименованию, по стоимости и наименованию.
-    Задание 5. Lambda-выражения
-Написать функциональный интерфейс с методом, который принимает число и возвращает булево значение. Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает true, если переданное число делится без остатка на 13.
-Написать функциональный интерфейс с методом, который принимает три дробных числа a, b, c и возвращает тоже дробное число. Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает дискриминант (D = b^2 — 4ac).
-Написать функциональный интерфейс с методом, который принимает 2 числа и возвращает их сумму. При этом сделать так, чтобы можно было посчитать сумму чисел типа integer + integer, float + float, double + double. Написать реализации такого
- интерфейса в виде лямбда-выражений для каждого типа возвращаемого значения.
 */
 public class Task1 {
 
     public static void main(String[] args) {
 
-        Stationery stationery1 = new Stationery(70, "Степлер");
-        Stationery stationery2 = new Stationery(99.99, "Скотч");
-        Stationery stationery3 = new Stationery(130, "Ножницы");
-        Stationery stationery4 = new Stationery(100, "Клей");
-        Stationery stationery5 = new Stationery(39.90, "Набор зажимов");
+        Stationery stationery1 = new OtherStationery(70, "Степлер");
+        Stationery stationery2 = new OtherStationery(99.99, "Скотч");
+        Stationery stationery3 = new OtherStationery(130, "Ножницы");
+        Stationery stationery4 = new OtherStationery(100, "Клей");
+        Stationery stationery5 = new OtherStationery(39.90, "Набор зажимов");
+        Stationery stationery6 = new Pen(47.90, "Ручки");
+        Stationery stationery7 = new Pencil(27.90, "Карандаши");
 
         ArrayList<Stationery> stationeries1 = new ArrayList<>();
         stationeries1.add(stationery1);
@@ -50,10 +41,11 @@ public class Task1 {
         Employee employee1 = new Employee("Миша");
         Employee employee2 = new Employee("Саша", stationeries1);
         Employee employee3 = new Employee("Лена", stationeries2);
+        employee1.setStationeries(new ArrayList<>(Arrays.asList(stationery6, stationery7)));
 
         System.out.println(employee1);
         System.out.println(employee2);
         System.out.println(employee3);
-        System.out.printf(" У работника с именем \"%s\" концелярии на %5.2f", employee2.getName(), employee2.getPriceOfAllStationeries());
+        System.out.printf(" У работника с именем \"%s\" концелярии на %5.2f", employee1.getName(), employee1.getPriceOfAllStationeries());
     }
 }

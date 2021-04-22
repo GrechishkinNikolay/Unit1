@@ -1,11 +1,11 @@
-package Unit2;
+package Unit2.Stationeries;
 
 import java.util.Objects;
 
-public class Stationery {
+public abstract class Stationery {
 
-    private double price;
-    private String name;
+    protected double price;
+    protected String name;
 
     public Stationery(double price, String name) {
         this.price = price;
