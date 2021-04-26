@@ -23,7 +23,7 @@ public abstract class Stationery {
 
     @Override
     public String toString() {
-        return "Stationery{" +
+        return "\nStationery{" +
                 "price=" + price +
                 ", name='" + name + '\'' +
                 '}';
