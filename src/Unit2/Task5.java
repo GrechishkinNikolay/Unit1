@@ -1,37 +1,45 @@
 package Unit2;
 
-import Unit2.Stationeries.Marker;
-import Unit2.Stationeries.Pen;
-import Unit2.Stationeries.Pencil;
-import Unit2.Stationeries.Stationery;
-import java.util.ArrayList;
 /*
     Задание 5. Lambda-выражения
-Написать функциональный интерфейс с методом, который принимает число и возвращает булево значение. Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает true, если переданное число делится без остатка на 13.
-Написать функциональный интерфейс с методом, который принимает три дробных числа a, b, c и возвращает тоже дробное число. Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает дискриминант (D = b^2 — 4ac).
-Написать функциональный интерфейс с методом, который принимает 2 числа и возвращает их сумму. При этом сделать так, чтобы можно было посчитать сумму чисел типа integer + integer, float + float, double + double. Написать реализации
-такого
-интерфейса в виде лямбда-выражений для каждого типа возвращаемого значения.
+Написать функциональный интерфейс с методом, который принимает число и возвращает булево значение.
+Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает true, если переданное число делится без остатка на 13.
+
+Написать функциональный интерфейс с методом, который принимает три дробных числа a, b, c и возвращает тоже дробное число.
+Написать реализацию такого интерфейса в виде лямбда-выражения, которое возвращает дискриминант (D = b^2 — 4ac).
+
+Написать функциональный интерфейс с методом, который принимает 2 числа и возвращает их сумму.
+При этом сделать так, чтобы можно было посчитать сумму чисел типа integer + integer, float + float, double + double.
+Написать реализации такого интерфейса в виде лямбда-выражений для каждого типа возвращаемого значения.
 */
+
+import Unit2.forTask5.Adder;
+import Unit2.forTask5.Discriminant;
+import Unit2.forTask5.Remainder;
 
 public class Task5 {
 
     public static void main(String[] args) {
 
-        Pen stationery1 = new Pen(47.90, "Ручки");
-        Pencil stationery2 = new Pencil(27.90, "Карандаши");
-        Marker stationery3 = new Marker(67, "Фломастеры");
+        Remainder realisation = (int number) -> number % 13 == 0;
+        System.out.println(realisation.isDivisibleBy13WithoutRemainder(26));
 
-//        WritingTools tool = new WritingTools(); //Не выйдет, т.к. абстрактный класс.
+        Discriminant discriminant = (double a, double b, double c) -> b * b - 4 * a * c;
+        System.out.println(discriminant.calculateDiscriminant(1.05, 2.6, 0.87));
 
-        ArrayList<Stationery> standartSetOfStationeries = new ArrayList<>();
-        standartSetOfStationeries.add(stationery1);
-        standartSetOfStationeries.add(stationery2);
-        standartSetOfStationeries.add(stationery3);
+        Adder<Integer> adderInt = (Integer a, Integer b) -> a + b;
+        int a = 24;
+        int b = 18;
+        System.out.println(adderInt.add(a,b));
 
-        Employee лена = new Employee("Лена", standartSetOfStationeries);
+        Adder<Double> adderDouble = (Double ad,Double bd) -> ad + bd;
+        double ad = 20;
+        double bd = 22;
+        System.out.println(adderDouble.add(ad,bd));
 
-        System.out.println(лена);
-        System.out.printf(" У работника с именем \"%s\" концелярии на %5.2f", лена.getName(), лена.getPriceOfAllStationeries());
+        Adder<Float> adderFloat = (Float af,Float bf) -> af + bf;
+        float af = 19;
+        float bf = 23;
+        System.out.println(adderFloat.add(af,bf));
     }
 }
