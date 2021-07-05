@@ -1,22 +1,17 @@
+import ExampleWildcards.*;
+
 public class Runnre {
 
-    public static void main(String args[]) throws CloneNotSupportedException {
-        Bicycle peugeot = new Bicycle("Peugeot", 120);
-        peugeot.handleBar = new HandleBar();
-        peugeot.handleBar.left();
+    public static void main(String args[]) {
+        Garage<Car> garage = new Garage<>();
+        garage.set(new Car("Aston Martin"));
+        Car car = (Car) garage.get();
+        System.out.println(car.getName()); // Aston Martin
 
-        Bicycle peugeot2 = (Bicycle) peugeot.clone();
-        peugeot2.handleBar.right();
+        Garage<Motorcycle> garage2 = new Garage<>();
+        garage2.set(new Motorcycle("Honda CBR500R"));
+        Motorcycle motorcycle = (Motorcycle) garage2.get();
+        System.out.println(motorcycle.getName());
 
-        System.out.println(peugeot);
-        System.out.println(peugeot2);
-
-//        seat.up();
-//        peugeot.start();
-//        handleBar.left();
-//        System.out.println(peugeot);
-//        handleBar.right();
-//        handleBar.right();
-//        System.out.println(peugeot);
     }
 }
