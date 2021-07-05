@@ -1,14 +1,14 @@
 package ExampleWildcards;
 
-public class Garage<V extends Vehicle> {
+public class Garage<T extends Vehicle> {
 
-    private V v;
+    private T t;
 
-    public V get() {
-        return v;
+    public T get() {
+        return t;
     }
 
-    public void set(V v) {
-        this.v = v;
+    public void set(T t) {
+        this.t = t;
     }
 }
