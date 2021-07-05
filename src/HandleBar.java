@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class HandleBar implements Cloneable {
+public class HandleBar implements Serializable {
 
     public int degree;
 
@@ -21,7 +22,7 @@ public class HandleBar implements Cloneable {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public HandleBar clone() throws CloneNotSupportedException {
+        return (HandleBar) super.clone();
     }
 }
