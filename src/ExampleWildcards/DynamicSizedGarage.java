@@ -3,6 +3,7 @@ package ExampleWildcards;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class DynamicSizedGarage<T extends Vehicle> {
 
@@ -24,9 +25,26 @@ public class DynamicSizedGarage<T extends Vehicle> {
         vehicles.addAll(list);
     }
 
-    public void forEach(Consumer<T> consumer) {
+    public void forEach(Consumer<? super T> consumer) {
         for (T vehicle : vehicles) {
             consumer.accept(vehicle);
         }
+    }
+
+    public void replaceWith(List<T> list) {
+        final int listSize = list.size();
+        final int size = vehicles.size();
+        vehicles.subList(0, Math.min(listSize, size)).clear();
+        vehicles.addAll(0, list);
+    }
+
+    public List<T> filter(Predicate<T> predicate) {
+        List<T> result = new ArrayList<>();
+        for (T vehicle : vehicles) {
+            if (predicate.test(vehicle)) {
+                result.add(vehicle);
+            }
+        }
+        return result;
     }
 }

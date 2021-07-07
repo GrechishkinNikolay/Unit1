@@ -1,6 +1,7 @@
 import ExampleWildcards.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Runnre {
 
@@ -48,7 +49,7 @@ public class Runnre {
     garage.add(new Car("Jaguar"));
     garage.add(new Car("BMW"));
     garage.forEach(car -> System.out.println(car.getName()));*/
-        List<Truck> trucks = new ArrayList<>();
+/*        List<Truck> trucks = new ArrayList<>();
         trucks.add(new Truck("Hell yeah"));
         trucks.add(new Truck("Terminator"));
 
@@ -56,6 +57,19 @@ public class Runnre {
         garage.add(new Car("Aston Martin"));
         // Error: incompatible types: List<Truck>
         //        cannot be converted to List<Car>
-        garage.addAll(trucks);
+        garage.addAll(trucks);*/
+        Consumer<Object> objectConsumer = object -> System.out.println(object.hashCode());
+        Consumer<Vehicle> vehicleConsumer = vehicle -> System.out.println(vehicle.getName());
+
+        DynamicSizedGarage<Car> garage = new DynamicSizedGarage<>();
+        garage.add(new Car("Toyota"));
+        garage.add(new Car("Jaguar"));
+        garage.add(new Truck("BMW"));
+        // Error: incompatible types: Consumer<Vehicle>
+        //        cannot be converted to Consumer<Car>
+        garage.forEach(vehicleConsumer);
+        // Error: incompatible types: Consumer<Object>
+        //        cannot be converted to Consumer<Car>
+        garage.forEach(objectConsumer);
     }
 }
