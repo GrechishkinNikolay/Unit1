@@ -41,7 +41,7 @@ public class Task5 {
         Notepad notepad = new Notepad(3);
 
         for (; ; ) {
-            System.out.println("1 - Добавить новую запись в блокнот\n2 - Изменить запись\n3 - отобразить все записи\n4 - выход");
+            System.out.println("11 - Добавить новую запись в блокнот\n2 - Изменить запись\n3 - отобразить все записи\n4 - выход");
             choice = in.nextInt();
 
             switch (choice) {

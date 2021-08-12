@@ -1,7 +1,6 @@
 package main.unit1.note;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import unit1.note.Note;
@@ -30,7 +29,7 @@ class NotepadTest {
 
         assertEquals(notepad.getNotes().length, 2);
         assertEquals(notepad.getNotes()[0], new Note(textFirstNote));
-        assertEquals(notepad.getNotes()[1], new Note("Test of second note"));
+        assertEquals(notepad.getNotes()[1], new Note(textSecondNote));
     }
 
     @Test
@@ -55,8 +54,7 @@ class NotepadTest {
         notepad.addNote(textFirstNote);
         notepad.addNote(textSecondNote);
 
-        assertEquals(notepad.getNotes().length, 2);
-        assertEquals(notepad.getNotes(), );
+//        assertEquals(notepad.getNotes(), );
 
     }
 
