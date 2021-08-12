@@ -13,7 +13,7 @@ class NotepadTest {
     void addOneNote() {
         var notepad = new Notepad(1);
 
-        String textFirstNote = "Test of first note";
+        var textFirstNote = "Test of first note";
         notepad.addNote(textFirstNote);
 
         assertEquals(notepad.getNotes().length, 1);
@@ -23,8 +23,8 @@ class NotepadTest {
     void addNotesMoreThenSize() {
         var notepad = new Notepad(1);
 
-        String textFirstNote = "Test of first note";
-        String textSecondNote = "Test of second note";
+        String textFirstNote = "Text of first note";
+        String textSecondNote = "Text of second note";
         notepad.addNote(textFirstNote);
         notepad.addNote(textSecondNote);
 
@@ -35,10 +35,29 @@ class NotepadTest {
 
     @Test
     void updateNote() {
+        var notepad = new Notepad(1);
+
+        String textFirstNote = "First note";
+        String textSecondNote = "Second note";
+
+        notepad.addNote(textFirstNote);
+        notepad.updateNote(0, textSecondNote);
+
+        assertEquals(notepad.getNotes()[0], new Note(textSecondNote));
     }
 
     @Test
     void getNotes() {
+        var notepad = new Notepad(2);
+
+        String textFirstNote = "First note";
+        String textSecondNote = "Second note";
+        notepad.addNote(textFirstNote);
+        notepad.addNote(textSecondNote);
+
+        assertEquals(notepad.getNotes().length, 2);
+        assertEquals(notepad.getNotes(), );
+
     }
 
     @Test
