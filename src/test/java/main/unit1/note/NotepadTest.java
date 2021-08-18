@@ -1,7 +1,7 @@
 package main.unit1.note;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 import unit1.note.Note;
 import unit1.note.Notepad;
@@ -9,7 +9,7 @@ import unit1.note.Notepad;
 class NotepadTest {
 
     @Test
-    void addOneNote() {
+    void addOneNoteTest() {
         var notepad = new Notepad(1);
 
         var textFirstNote = "Test of first note";
@@ -18,8 +18,9 @@ class NotepadTest {
         assertEquals(notepad.getNotes().length, 1);
         assertEquals(notepad.getNotes()[0], new Note(textFirstNote));
     }
+
     @Test
-    void addNotesMoreThenSize() {
+    void addNotesMoreThenSizeTest() {
         var notepad = new Notepad(1);
 
         String textFirstNote = "Text of first note";
@@ -33,7 +34,7 @@ class NotepadTest {
     }
 
     @Test
-    void updateNote() {
+    void updateNoteTest() {
         var notepad = new Notepad(1);
 
         String textFirstNote = "First note";
@@ -46,19 +47,34 @@ class NotepadTest {
     }
 
     @Test
-    void getNotes() {
-        var notepad = new Notepad(2);
+    void getNotesTest() {
+        var notepad = new Notepad(3);
 
         String textFirstNote = "First note";
         String textSecondNote = "Second note";
+        String textThirdNote = "Third note";
         notepad.addNote(textFirstNote);
         notepad.addNote(textSecondNote);
+        notepad.addNote(textThirdNote);
 
-//        assertEquals(notepad.getNotes(), );
+        Note[] notes = notepad.getNotes();
 
+        assertEquals(notes.length, 3);
+        assertArrayEquals(notes, new Note[]{new Note(textFirstNote), new Note(textSecondNote), new Note(textThirdNote)});
     }
 
     @Test
     void getLastNoteIndex() {
+        var notepad = new Notepad(2);
+
+        assertEquals(notepad.getLastNoteIndex(), 0);
+
+        String textFirstNote = "Text of first note";
+        notepad.addNote(textFirstNote);
+
+        assertEquals(notepad.getLastNoteIndex(), 1);
+
+
+
     }
 }
