@@ -16,19 +16,6 @@ public class Bicycle implements Serializable {
         System.out.println("Поехали!");
     }
 
-    public class Seat {
-
-        public void up() {
-
-            System.out.println("Сиденье поднято выше!");
-        }
-
-        public void down() {
-
-            System.out.println("Сиденье опущено ниже!");
-        }
-    }
-
     @Override
     public String toString() {
         return "Bicycle{" +
