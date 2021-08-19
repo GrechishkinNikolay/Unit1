@@ -1,4 +1,4 @@
-package unit3;
+package unit5;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,10 +13,9 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        try(
+        try (
             FileOutputStream fileOutputStream = new FileOutputStream("someFileWithJavaCode.txt");
         ) {
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

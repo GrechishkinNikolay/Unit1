@@ -1,10 +1,8 @@
-package main.unit1.note;
+package unit1.note;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import unit1.note.Note;
-import unit1.note.Notepad;
 
 class NotepadTest {
 
