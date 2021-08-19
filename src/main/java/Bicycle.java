@@ -1,3 +1,5 @@
+package main.java;
+
 import java.io.Serializable;
 
 public class Bicycle implements Serializable {
@@ -14,6 +16,19 @@ public class Bicycle implements Serializable {
 
     public void start() {
         System.out.println("Поехали!");
+    }
+
+    public class Seat {
+
+        public void up() {
+
+            System.out.println("Сиденье поднято выше!");
+        }
+
+        public void down() {
+
+            System.out.println("Сиденье опущено ниже!");
+        }
     }
 
     @Override

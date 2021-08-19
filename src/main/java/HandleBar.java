@@ -1,3 +1,5 @@
+package main.java;
+
 public class HandleBar implements Cloneable {
 
     public int degree;
