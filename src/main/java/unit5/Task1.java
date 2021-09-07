@@ -16,37 +16,21 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        File file = new File("src/main/java/unit5/someFileWithJavaCode2.java");
-
         try (
-                final DataInputStream dataInputStream = new DataInputStream(new FileInputStream("src/main/resources/someFileWithJavaCode.txt"));
-                final DataOutputStream dataOutputStream = new DataOutputStream((new FileOutputStream("src/main/java/unit5/result.txt")));
+            final DataInputStream dataInputStream = new DataInputStream(new FileInputStream("src/main/resources/someFileWithJavaCode.txt"));
+            final DataOutputStream dataOutputStream = new DataOutputStream((new FileOutputStream("src/main/java/unit5/result.txt")));
         ) {
 
             String javaCode = new String(dataInputStream.readAllBytes());
 
-            List<String> javaCodeWords = Arrays.asList(javaCode.split("[^a-zA-Z]+"));
-
-            Map<String, Integer> map = new HashMap<>();
-
-            javaCodeWords
-                    .stream()
-                    .filter(javaKeyWords::contains)
-                    .forEach(keyWord -> {
-                        if (map.containsKey(keyWord)) {
-                            map.put(keyWord, map.get(keyWord) + 1);
-                        } else {
-                            map.put(keyWord, 1);
-                        }
-                    });
-
-            map.forEach((key, value) -> {
-                try {
-                    dataOutputStream.writeBytes(key + " " + value + " " + "\n");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
+            CounterJavaWords.countJavaWordsMap(javaCode)
+                .forEach((key, value) -> {
+                    try {
+                        dataOutputStream.writeBytes(key + " " + value + " " + "\n");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
 
         } catch (IOException e) {
             e.printStackTrace();
