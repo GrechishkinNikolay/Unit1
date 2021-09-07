@@ -1,9 +1,10 @@
 package unit5;
 
-import java.io.*;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /*
 Задание 1. Работа с байтовыми потоками ввода-вывода
@@ -11,8 +12,6 @@ import java.util.regex.Pattern;
 Выведите эти слова и их количество в другой файл. Используйте только байтовые потоки ввода-вывода.
 */
 public class Task1 {
-
-    private static List<String> javaKeyWords = new ArrayList<>(Arrays.asList("package", "public", "class", "private", "String", "this", "void", "static", "abstract", "import", "return"));
 
     public static void main(String[] args) {
 
