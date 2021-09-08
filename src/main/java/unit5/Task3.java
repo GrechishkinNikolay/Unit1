@@ -46,7 +46,7 @@ public class Task3 {
             ObjectOutputStream objectOutputStream = file.length() < 5 ? new ObjectOutputStream(fileOutputStream) : null;
 
             for (; ; ) {
-                System.out.println("1 - Загрузить из файла\n2 - Сохранить в файл\n3 - Отобразить\n4 - Добавить\n5 - выйти и сохранить");
+                System.out.println("1 - Загрузить из файла\n2 - Сохранить в файл\n3 - Отобразить\n4 - Добавить\n5 - Выйти");
                 choice = in.nextInt();
 
                 switch (choice) {
