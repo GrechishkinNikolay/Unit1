@@ -1,5 +1,6 @@
 package unit5;
 
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,13 +21,23 @@ public class Task3 {
 
         List<Film> films = new ArrayList<>();
 
+        interstellar.getActors().add(Matthew);
+        interstellar.getActors().add(Anne);
+        theGentlemen.getActors().add(Matthew);
+        theGentlemen.getActors().add(Jessica);
 
+        films.add(interstellar);
+        films.add(theGentlemen);
+
+        System.out.println(films);
+
+        final ObjectInputStream objectInputStream = new ObjectInputStream();
 
         Scanner in = new Scanner(System.in);
         int choice;
 /*
         for (; ; ) {
-            System.out.println("11 - Добавить новую запись в блокнот\n2 - Изменить запись\n3 - отобразить все записи\n4 - выход");
+            System.out.println("11 - Добавить новую запись в блокнот\n2 - Изменить запись\n3 - отобразить все записи\n4 - выйти и сохранить");
             choice = in.nextInt();
 
             switch (choice) {

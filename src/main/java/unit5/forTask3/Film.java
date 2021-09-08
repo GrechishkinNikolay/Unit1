@@ -1,9 +1,10 @@
 package unit5.forTask3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Film {
+public class Film implements Serializable {
 
     private String title;
     private List<Actor> actors;
@@ -27,5 +28,13 @@ public class Film {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+            "title='" + title + '\'' +
+            ", actors=" + actors +
+            '}';
     }
 }
