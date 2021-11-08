@@ -11,7 +11,7 @@ import org.openjdk.jmh.annotations.State;
 @State(Scope.Benchmark)
 public class ExecutionPlan {
 
-    @Param({ "100", "200", "300", "500", "1000" })
+    @Param({"200", "300"})
     public int iterations;
 
     public Hasher murmur3;

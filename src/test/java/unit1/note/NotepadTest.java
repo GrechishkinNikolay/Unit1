@@ -11,7 +11,7 @@ class NotepadTest {
     void addOneNoteTest() {
         var notepad = new Notepad(1);
 
-        var textFirstNote = "Test of first note";
+        var textFirstNote = "unit6.Test of first note";
         notepad.addNote(textFirstNote);
 
         assertEquals(notepad.getNotes().length, 1);
