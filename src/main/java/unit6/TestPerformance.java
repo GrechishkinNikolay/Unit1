@@ -88,7 +88,7 @@ TestPerformance.getByIndexFromLinkedList    100000  avgt           0,100        
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @Measurement(batchSize = 10000, iterations = 1)
-@Warmup(batchSize = 300, iterations = 2)
+@Warmup(batchSize = 3000, iterations = 1)
 @State(Scope.Thread)
 public class TestPerformance {
 
@@ -144,43 +144,43 @@ public class TestPerformance {
         getLinkedList().add(size / 2, value);
     }
 
-        @Benchmark
-        public Integer getByIndexFromArrayList() {
-            return arrayList.get(8);
-        }
+    @Benchmark
+    public Integer getByIndexFromArrayList() {
+        return getArrayList().get(8);
+    }
 
-        @Benchmark
-        public Integer getByIndexFromLinkedList() {
-            return linkedList.get(8);
-        }
+    @Benchmark
+    public Integer getByIndexFromLinkedList() {
+        return getLinkedList().get(8);
+    }
 
-        @Benchmark
-        public boolean containArrayList() {
-            return arrayList.contains(value);
-        }
+    @Benchmark
+    public boolean containArrayList() {
+        return getArrayList().contains(value);
+    }
 
-        @Benchmark
-        public boolean containLinkedList() {
-            return linkedList.contains(value);
-        }
+    @Benchmark
+    public boolean containLinkedList() {
+        return getLinkedList().contains(value);
+    }
 
-        @Benchmark
-        public boolean delArrayList() {
-            return arrayList.remove(value);
-        }
+    @Benchmark
+    public boolean delArrayList() {
+        return getArrayList().remove(value);
+    }
 
-        @Benchmark
-        public boolean delLinkedList() {
-            return linkedList.remove(value);
-        }
+    @Benchmark
+    public boolean delLinkedList() {
+        return getLinkedList().remove(value);
+    }
 
-        @Benchmark
-        public boolean delByIndexArrayList() {
-            return arrayList.remove(value);
-        }
+    @Benchmark
+    public boolean delByIndexArrayList() {
+        return getArrayList().remove(value);
+    }
 
-        @Benchmark
-        public boolean delByIndexLinkedList() {
-            return linkedList.remove(value);
-        }
+    @Benchmark
+    public boolean delByIndexLinkedList() {
+        return getLinkedList().remove(value);
+    }
 }
