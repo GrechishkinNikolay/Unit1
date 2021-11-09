@@ -2,7 +2,10 @@ package unit6.Task3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Task3 {
 
@@ -36,7 +39,16 @@ public class Task3 {
                                     (x, y) -> x + y)
         );
         //2
+        LinkedHashSet<String> names = new LinkedHashSet<String>(
+            clients
+                .stream()
+                .map(Client::getName)
+                .collect(Collectors.toCollection(LinkedHashSet::new))
+        );
+        System.out.println(names);
         //3
+        clients.stream().
+
         //4
         //5
         //6
