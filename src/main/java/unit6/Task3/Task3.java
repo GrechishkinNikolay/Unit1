@@ -2,6 +2,7 @@ package unit6.Task3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,6 +39,7 @@ public class Task3 {
                                     },
                                     (x, y) -> x + y)
         );
+
         //2
         LinkedHashSet<String> names = new LinkedHashSet<String>(
             clients
@@ -46,10 +48,18 @@ public class Task3 {
                 .collect(Collectors.toCollection(LinkedHashSet::new))
         );
         System.out.println(names);
+
         //3
-        clients.stream().
+        System.out.println(
+            clients
+                .stream()
+                .anyMatch(client -> client.getAge() > 59)
+        );
 
         //4
+        LinkedHashMap<Integer, String> clientsMap =
+            clients.stream().collect(Collectors.toMap(Client::getId, Client::getName));
+
         //5
         //6
         //7
