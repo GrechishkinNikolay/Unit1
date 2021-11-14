@@ -1,4 +1,4 @@
-package unit6;
+package unit6.Task2;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -59,7 +59,6 @@ TestPerformance.getByIndexFromLinkedList     50000  avgt        5299,219        
 TestPerformance.getByIndexFromLinkedList    100000  avgt       13366,002          ms/op
 
 Process finished with exit code 0
-
 */
 
 @BenchmarkMode(Mode.AverageTime)

@@ -1,4 +1,4 @@
-package unit6;
+package unit6.Task2;
 
 import java.io.IOException;
 import org.openjdk.jmh.runner.Runner;
@@ -6,7 +6,7 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-public class Test {
+public class Task2 {
 
     public static void main(String[] args) throws IOException, RunnerException {
 

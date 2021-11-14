@@ -57,8 +57,8 @@ public class Task3 {
         );
 
         //4
-        LinkedHashMap<Integer, String> clientsMap =
-            clients.stream().collect(Collectors.toMap(Client::getId, Client::getName));
+//        LinkedHashMap<Integer, String> clientsMap =
+//            clients.stream().collect(Collectors.toMap(Client::getId, Client::getName));
 
         //5
         //6
