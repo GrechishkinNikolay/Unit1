@@ -10,6 +10,14 @@ public class Phone {
         this.isMobile = isMobile;
     }
 
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "number='" + number + '\'' +
+                ", isMobile=" + isMobile +
+                '}';
+    }
+
     public String getNumber() {
         return number;
     }

@@ -16,6 +16,16 @@ public class Client {
         this.phones = phones;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", phones=" + phones +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
