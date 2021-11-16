@@ -1,7 +1,5 @@
 package unit6.Task1;
 
-import javafx.application.Application;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Enumeration;
