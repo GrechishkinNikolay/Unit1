@@ -53,15 +53,13 @@ public class Task3 {
         );
 
         //4
-        //        LinkedHashMap<Integer, String> clientsMap = (LinkedHashMap<Integer, String>)
-        //                    clients.stream().collect(Collectors.toMap(Client::getId, Client::getName)); //Наивный
-        //                    нерабочий способ
+        Map<Integer, String> collect = clients.stream().collect(Collectors.toMap(Client::getId, Client::getName));
 
-        LinkedHashMap<Integer, String> clientsMap = new LinkedHashMap<>();
-
-        clients.stream().forEach(client -> clientsMap.put(client.getId(), client.getName()));
-
-        System.out.println(clientsMap);
+        //        LinkedHashMap<Integer, String> clientsMap = new LinkedHashMap<>();
+//
+//        clients.forEach(client -> clientsMap.put(client.getId(), client.getName()));
+//
+        System.out.println(collect);
 
         //5
         LinkedHashMap<Integer, ArrayList<Client>> clientsMap2 = new LinkedHashMap<>();
