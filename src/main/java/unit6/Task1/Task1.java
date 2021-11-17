@@ -20,8 +20,9 @@ public class Task1 {
         Properties prop = new Properties();
         InputStream input = new FileInputStream("some.properties");
         prop.load(input);
-        Map propertyMap = (Map) prop;
-        System.out.println(propertyMap);
+        Map propertyMap = prop;
+        HashMap<String, String> hashMap = new HashMap<>(propertyMap);
+        System.out.println(hashMap);
 
     }
 }
