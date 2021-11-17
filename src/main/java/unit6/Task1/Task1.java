@@ -1,8 +1,12 @@
 package unit6.Task1;
 
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class Task1 {
@@ -16,7 +20,8 @@ public class Task1 {
         Properties prop = new Properties();
         InputStream input = new FileInputStream("some.properties");
         prop.load(input);
-        System.out.println(prop);
+        Map propertyMap = (Map) prop;
+        System.out.println(propertyMap);
 
     }
 }
