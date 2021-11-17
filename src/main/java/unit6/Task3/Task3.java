@@ -91,6 +91,16 @@ public class Task3 {
         System.out.println(phonesList);
 
         //7
+        Optional<Client> max = clients
+            .stream()
+            .filter(client -> !Objects.isNull(client.getPhones())
+                && client
+                .getPhones()
+                .stream()
+                .anyMatch(phone -> !phone.isMobile())
+            )
+            .max(Comparator.comparing(Client::getAge));
 
+        System.out.println(max.get());
     }
 }
